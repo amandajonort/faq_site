@@ -1,0 +1,51 @@
+html {
+  background: #f2f1f4;
+  color: #19171c;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.accordion {
+  width: 70%;
+  margin: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+h1 {
+  padding: 20px;
+}
+.title {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.title::after {
+  content: "\25BC";
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.title.active::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.title.active + .description {
+  display: block;
+}
+
+.description {
+  display: none;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.description p {
+  margin: 0;
+}
